@@ -1,3 +1,4 @@
+import sys
 from PyQt6 import QtCore, QtGui, QtWidgets
 import requests
 from decimal import Decimal, ROUND_HALF_UP
@@ -161,7 +162,6 @@ class ui_MainWindow(object):
         self.target_comboBox.setItemText(3, _translate("MainWindow", "JPY"))
         self.target_comboBox.setItemText(4, _translate("MainWindow", "AED"))
 
-
     def update_conversion_rate(self):
         api_key = ""  # add api here
 
@@ -187,7 +187,6 @@ class ui_MainWindow(object):
         else:
             self.rate = None
 
-
     def convert_currency(self):
         if self.rate is not None and self.basevalue_lineEdit.text():
             try:
@@ -203,7 +202,6 @@ class ui_MainWindow(object):
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = ui_MainWindow()

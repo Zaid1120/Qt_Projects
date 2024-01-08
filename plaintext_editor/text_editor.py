@@ -25,35 +25,43 @@ class TextEditor(QMainWindow):
 
         # undo functionality
         undo_btn = QAction(QIcon("images/undo.png"), "undo", self)
+        undo_btn.setShortcut("Ctrl+Z")
         undo_btn.triggered.connect(self.editor.undo)
 
         # redo functionality
         redo_btn = QAction(QIcon("images/redo.png"), "redo", self)
+        redo_btn.setShortcut("Ctrl+Y")
         redo_btn.triggered.connect(self.editor.redo)
 
         # copy functionality
         copy_btn = QAction(QIcon("images/copy.png"), "copy", self)
+        copy_btn.setShortcut("Ctrl+C")
         copy_btn.triggered.connect(self.editor.copy)
 
         # cut functionality
         cut_btn = QAction(QIcon("images/cut.png"), "cut", self)
+        cut_btn.setShortcut("Ctrl+X")
         cut_btn.triggered.connect(self.editor.cut)
+
+        # paste functionality
+        paste_btn = QAction(QIcon("images/paste.png"), "paste", self)
+        paste_btn.setShortcut("Ctrl+V")
+        paste_btn.triggered.connect(self.editor.paste)
 
         # bold functionality
         bold_btn = QAction(QIcon("images/bold.png"), "bold", self)
+        bold_btn.setShortcut("Ctrl+B")
         bold_btn.triggered.connect(self.toggle_bold)
 
         # underline functionality
         underline_btn = QAction(QIcon("images/underline.png"), "Underline", self)
+        underline_btn.setShortcut("Ctrl+U")
         underline_btn.triggered.connect(self.toggle_underline)
 
         # italic functionality
         italic_btn = QAction(QIcon("images/italic.png"), "italic", self)
+        italic_btn.setShortcut("Ctrl+I")
         italic_btn.triggered.connect(self.toggle_italic)
-
-        # paste functionality
-        paste_btn = QAction(QIcon("images/paste.png"), "paste", self)
-        paste_btn.triggered.connect(self.editor.paste)
 
         # changing font size functionality
         self.fontSizeBox.setValue(18)
@@ -79,6 +87,7 @@ class TextEditor(QMainWindow):
 
         # save functionality
         save_btn = QAction(QIcon("images/save.png"), "save", self)
+        save_btn.setShortcut("Ctrl+S")
         save_btn.triggered.connect(self.save_file)
 
         # # zoom in functionality
@@ -91,6 +100,7 @@ class TextEditor(QMainWindow):
 
         # print functionality
         print_btn = QAction(QIcon("images/print.png"), "print", self)
+        print_btn.setShortcut("Ctrl+P")
         print_btn.triggered.connect(self.print_document)
 
         # adding functionalities to toolbar
