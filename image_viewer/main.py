@@ -10,7 +10,7 @@ class Viewer(QMainWindow):
         super(Viewer, self).__init__()
         uic.loadUi("image_viewer.ui", self)
         self.show()
-        self.current_file = "images/waiting.jpg"
+        self.current_file = "waiting.jpg"
         pixmap = QPixmap(self.current_file)
         pixmap = pixmap.scaled(self.width(), self.height())
         self.label.setPixmap(pixmap)
@@ -46,7 +46,7 @@ class Viewer(QMainWindow):
         try:
             pixmap = QPixmap(self.current_file)
         except:
-            pixmap = QPixmap("waiting.png")
+            pixmap = QPixmap("waiting.jpg")
         pixmap = pixmap.scaled(self.width(), self.height())
         self.label.setPixmap(pixmap)
         self.label.resize(self.width(), self.height())

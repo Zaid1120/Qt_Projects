@@ -191,7 +191,7 @@ class ui_MainWindow(object):
         if self.rate is not None and self.basevalue_lineEdit.text():
             try:
                 base_amount = Decimal(self.basevalue_lineEdit.text())
-                rate = Decimal(str(self.rate))  # convert rate to decimal
+                rate = round(Decimal(str(self.rate)),2)  # convert rate to decimal
                 converted_amount = (base_amount * rate).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
 
                 self.targetvalue_lineEdit.setText(f"{converted_amount}")
